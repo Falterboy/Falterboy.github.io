@@ -22,7 +22,11 @@ li a {
 }
 
 li {
-  text-align: center; 
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 25px 75px;
+  text-decoration: none;
 }
 h2 { 
 text-align: center;
