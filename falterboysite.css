@@ -14,6 +14,7 @@ ul {
   
 }
 li a {
+  float: left: 
   display: block;
   color: black;
   text-align: center;
@@ -22,6 +23,7 @@ li a {
 }
 
 li {
+  float:left; 
   display: block;
   color: black;
   text-align: center;
