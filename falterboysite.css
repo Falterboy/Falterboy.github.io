@@ -3,6 +3,7 @@
 body {
 	background-image: url ("Falterboy-site/falterboy Hi Res.jpg");
 	text-align: center;
+	background-size: contain; 
 }
 
 ul {
