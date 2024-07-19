@@ -6,7 +6,12 @@ body {
 	background-size: 150px; 
 	
 }
-
+.container1{
+	padding:100px;
+}
+.container2{
+	padding: 100px;
+}
 ul {
   list-style-type: none;
   margin: 0;
