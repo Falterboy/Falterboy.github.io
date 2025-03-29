@@ -1,3 +1,21 @@
+li a {
+  float: left; 
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 25px 45px;
+  text-decoration: none;
+}
+
+li {
+  float:left; 
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 25px 75px;
+  text-decoration: none;
+
+
 .gallery {
   --s: 130px; /* control the size of the images*/
   
