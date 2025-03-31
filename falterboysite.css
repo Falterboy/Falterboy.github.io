@@ -38,7 +38,7 @@ ul {
 }
 li a {
   float: none; 
-  display: block;
+  display: inline;
   color: black;
   text-align: center;
   padding: 25px 45px;
@@ -47,7 +47,7 @@ li a {
 
 li {
   float: none; 
-  display: block;
+  display: inline;
   color: black;
   text-align: center;
   padding: 25px 75px;
