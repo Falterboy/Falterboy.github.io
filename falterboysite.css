@@ -19,8 +19,8 @@ body {
 }
 
 .container1 li {
-    float: none;  /* Remove float */
-    display: block;  /* Ensures vertical stacking */
+    float: none !important;  /* Remove float */
+    display: block !important;  /* Ensures vertical stacking */
     text-align: left;
     padding: 10px 0; /* Adjust spacing */
 }
