@@ -9,6 +9,7 @@ body {
 .container1{
 	padding:100px;
 	text-align: center;
+	display: block;
 }
 .container2{
 	padding: 100px;
