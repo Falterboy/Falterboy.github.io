@@ -39,7 +39,7 @@ ul {
 }
 li a {
   float: none; 
-  display: inline;
+  display: inline-block;
   color: black;
   text-align: center;
   padding: 25px 45px;
