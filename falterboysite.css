@@ -64,6 +64,24 @@ ul.nav a.nav-link:hover {
   text-align: center;
 }
 
+/*======Band Facts========*/
+/* Fix for the bottom band facts list */
+.band-facts {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.band-facts li {
+  display: block;
+  padding: 8px 0;
+  font-size: 16px;
+  color: black;
+}
+
+
 /* ===== Heading Style ===== */
 h2 {
   text-align: center;
