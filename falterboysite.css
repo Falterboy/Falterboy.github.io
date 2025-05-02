@@ -7,7 +7,31 @@ body {
   text-align: center;
 }
 
-/* ===== Custom Container 1 ===== */
+/* ===== Navbar Fix (Horizontal + Black Links) ===== */
+.nav {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  margin: 0 20px;
+}
+
+.nav-link {
+  color: black !important;
+  text-decoration: none;
+  padding: 15px 10px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: black !important;
+}
+
+/* ===== Container 1 (if used for other lists) ===== */
 .container1 {
   padding: 100px;
   text-align: center;
@@ -27,43 +51,19 @@ body {
   padding: 10px 0;
 }
 
-/* ===== Custom Container 2 ===== */
+/* ===== Container 2 ===== */
 .container2 {
   padding: 100px;
   text-align: center;
 }
 
-/* ===== Restore Bootstrap Nav Defaults and Customize ===== */
-.nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-item {
-  margin: 0 10px;
-}
-
-.nav-link {
-  color: black;
-  padding: 10px 20px;
-  text-decoration: none;
-}
-
-.nav-link:hover {
-  text-decoration: underline;
-}
-
-/* ===== Headings ===== */
+/* ===== Heading Style ===== */
 h2 {
   text-align: center;
   margin: 25px;
 }
 
-/* ===== Greeting Section Padding ===== */
+/* ===== Greeting Padding ===== */
 #greeting {
   padding-bottom: 400px;
 }
@@ -78,15 +78,8 @@ h2 {
   padding-top: 50px;
 }
 
-/* Ensure only one #vintage rule */
 .belowpic {
   padding-top: 50px;
-}
-
-/* ===== Centering Utility ===== */
-.center {
-  margin-top: 500px;
-  text-align: center;
 }
 
 /* ===== Social Icons ===== */
@@ -118,8 +111,10 @@ h2 {
   color: white;
 }
 
-  height: 800px;
-  width: 800px;
+/* ===== Centering Utility ===== */
+.center {
+  margin-top: 500px;
+  text-align: center;
 }
 
 
