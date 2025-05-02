@@ -1,13 +1,24 @@
-/* ===== Body and Background ===== */
+/* ===== Base Styles ===== */
 body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-color: #954b4c;
   background-image: url("Falterboy-site/falterboy Hi Res.jpg");
   background-size: 150px;
   background-repeat: no-repeat;
   background-position: top center;
   text-align: center;
+  display: grid;
+  place-content: center;
 }
 
-/* ===== Horizontal Nav Styling (EXPLICITLY for <ul class="nav">) ===== */
+h2 {
+  text-align: center;
+  margin: 25px;
+}
+
+/* ===== Navigation Styles ===== */
 ul.nav {
   display: flex;
   justify-content: center;
@@ -31,15 +42,24 @@ ul.nav a.nav-link:hover {
   text-decoration: underline;
   color: black !important;
 }
-.responsive-img {
+
+/* ===== Responsive Image ===== */
+#vintage {
   display: block;
-  max-width: 100%;   /* scales down on smaller screens */
-  height: auto;      /* keeps the correct aspect ratio */
-  margin: 0 auto;    /* centers the image horizontally */
+  margin: 50px auto 0;
+  width: 50%;
+  height: auto;
 }
 
-/* ===== Container 1 ===== */
-.container1 {
+.responsive-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* ===== Container Styles ===== */
+.container1, .container2 {
   padding: 100px;
   text-align: center;
   display: block;
@@ -48,24 +68,23 @@ ul.nav a.nav-link:hover {
 .container1 ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   text-align: left;
+  max-width: 600px;
 }
 
 .container1 li {
-  display: inline-block;
-  text-align: left;
+  display: block;
   padding: 10px 0;
+  font-size: 16px;
+  color: black;
 }
 
-/* ===== Container 2 ===== */
-.container2 {
-  padding: 100px;
-  text-align: center;
+.belowpic {
+  padding-top: 50px;
 }
 
-/*======Band Facts========*/
-/* Fix for the bottom band facts list */
+/* ===== Band Facts ===== */
 .band-facts {
   list-style-type: none;
   padding: 0;
@@ -81,31 +100,7 @@ ul.nav a.nav-link:hover {
   color: black;
 }
 
-
-/* ===== Heading Style ===== */
-h2 {
-  text-align: center;
-  margin: 25px;
-}
-
-/* ===== Greeting Padding ===== */
-#greeting {
-  padding-bottom: 400px;
-}
-
-/* ===== Centered Image Styling ===== */
-#vintage {
-  display: block;
-  margin: 50px auto 0;
-  width: 50%;
-  height: auto;
-}
-
-.belowpic {
-  padding-top: 50px;
-}
-
-/* ===== Social Icons ===== */
+/* ===== Social Media Icons ===== */
 .fa {
   padding: 20px;
   font-size: 30px;
@@ -134,10 +129,130 @@ h2 {
   color: white;
 }
 
-/* ===== Centering Utility ===== */
 .center {
   margin-top: 500px;
   text-align: center;
+}
+
+/* ===== Calendar Styles ===== */
+header {
+  background-color: #954b4c;
+  color: #ffffff;
+  padding: 20px;
+  font-size: 24px;
+}
+
+.calendar {
+  max-width: 600px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.month h2 {
+  background-color: #333;
+  color: #954b4c;
+  padding: 10px;
+  margin: 0;
+  border-radius: 5px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.day {
+  font-weight: bold;
+  padding: 10px;
+  background: #bbb;
+  border-radius: 5px;
+}
+
+.date {
+  padding: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.show-date {
+  background: #ff5722;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.show-date:hover::after {
+  content: attr(data-show);
+  display: block;
+  background: #333;
+  color: white;
+  padding: 5px;
+  position: absolute;
+  transform: translateY(-30px);
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+/* ===== Gallery Styles ===== */
+.gallery {
+  --s: 130px;
+  display: grid;
+  grid-template-columns: repeat(3,auto);
+  gap: 5px;
+  position: relative;
+}
+
+.gallery input {
+  position: absolute;
+  border: 2px solid #000;
+  border-radius: 50%;
+  inset: calc(50% - var(--s)/3);
+  cursor: pointer;
+  --g: linear-gradient(#000 0 0) no-repeat;
+  background: var(--g) 50%/var(--b,0%) 3px, var(--g) 50%/3px var(--b,0%);
+  transition: 1.5s;
+  appearance: none;
+}
+
+.gallery > img {
+  width: var(--s);
+  aspect-ratio: 1;
+  object-fit: cover;
+  transform: scale(.1);
+  filter: brightness(0);
+  pointer-events: none;
+  transform-origin: var(--x) var(--y);
+  transition: 1s calc((var(--i) - 1)*.1s);
+}
+
+.gallery > img:nth-of-type(1) {--i:1;--x: 150%;--y:150%;}
+.gallery > img:nth-of-type(2) {--i:2;--x:  50%;--y:150%;}
+.gallery > img:nth-of-type(3) {--i:3;--x: -50%;--y:150%;}
+.gallery > img:nth-of-type(4) {--i:4;--x: 150%;--y:50%; }
+.gallery > img:nth-of-type(5) {--i:5 }
+.gallery > img:nth-of-type(6) {--i:6;--x: -50%;--y:50%; }
+.gallery > img:nth-of-type(7) {--i:7;--x: 150%;--y:-50%;}
+.gallery > img:nth-of-type(8) {--i:8;--x:  50%;--y:-50%;}
+.gallery > img:nth-of-type(9) {--i:9;--x: -50%;--y:-50%;}
+
+.gallery > input:checked ~ img {
+  transform: scale(1);
+  filter: brightness(1);
+  pointer-events: initial;
+}
+
+.gallery > input:checked {
+  transform: translateY(calc(1.75*var(--s))) scale(.5) rotate(45deg);
+  --b: 70%;
 }
 
 
