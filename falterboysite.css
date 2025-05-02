@@ -7,8 +7,8 @@ body {
   text-align: center;
 }
 
-/* ===== Navbar Fix (Horizontal + Black Links) ===== */
-.nav {
+/* ===== Horizontal Nav Styling (EXPLICITLY for <ul class="nav">) ===== */
+ul.nav {
   display: flex;
   justify-content: center;
   list-style: none;
@@ -16,22 +16,23 @@ body {
   margin: 0;
 }
 
-.nav-item {
-  margin: 0 20px;
+ul.nav li.nav-item {
+  margin: 0 15px;
 }
 
-.nav-link {
+ul.nav a.nav-link {
   color: black !important;
   text-decoration: none;
-  padding: 15px 10px;
+  padding: 15px 20px;
+  display: inline-block;
 }
 
-.nav-link:hover {
+ul.nav a.nav-link:hover {
   text-decoration: underline;
   color: black !important;
 }
 
-/* ===== Container 1 (if used for other lists) ===== */
+/* ===== Container 1 ===== */
 .container1 {
   padding: 100px;
   text-align: center;
@@ -68,14 +69,12 @@ h2 {
   padding-bottom: 400px;
 }
 
-/* ===== Image Styling ===== */
+/* ===== Centered Image Styling ===== */
 #vintage {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 50px auto 0;
   width: 50%;
   height: auto;
-  padding-top: 50px;
 }
 
 .belowpic {
