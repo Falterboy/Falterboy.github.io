@@ -31,6 +31,12 @@ ul.nav a.nav-link:hover {
   text-decoration: underline;
   color: black !important;
 }
+.responsive-img {
+  display: block;
+  max-width: 100%;   /* scales down on smaller screens */
+  height: auto;      /* keeps the correct aspect ratio */
+  margin: 0 auto;    /* centers the image horizontally */
+}
 
 /* ===== Container 1 ===== */
 .container1 {
