@@ -29,31 +29,7 @@ body {
 	padding: 100px;
 	text-align: center;
 }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  display: block;
-  
-}
-li a {
-  float: none; 
-  display: inline-block;
-  color: black;
-  text-align: center;
-  padding: 25px 45px;
-  text-decoration: none;
-}
 
-li {
-  float: none; 
-  display: inline;
-  color: black;
-  text-align: center;
-  padding: 25px 75px;
-  text-decoration: none;
-}
 h2 { 
 text-align: center;
 margin-top: 25px;
