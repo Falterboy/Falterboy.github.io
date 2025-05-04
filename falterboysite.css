@@ -125,7 +125,7 @@ ul.nav a.nav-link:hover {
 }
 
 /* Social icon base styles */
-.social-icons .fa {
+.social-icons .fab {
   font-size: 42px;
   width: 70px;
   height: 70px;
@@ -140,7 +140,7 @@ ul.nav a.nav-link:hover {
   padding: 0;
 }
 
-.social-icons .fa:hover {
+.social-icons .fab:hover {
   opacity: 0.7;
 }
 
@@ -157,15 +157,15 @@ ul.nav a.nav-link:hover {
 }
 
 /* Individual social colors */
-.fa-facebook {
+.fab.fa-facebook-f {
   background: #3B5998;
 }
 
-.fa-twitter {
+.fab.fa-twitter {
   background: #55ACEE;
 }
 
-.fa-youtube {
+.fab.fa-youtube {
   background: #bb0000;
 }
 
@@ -294,3 +294,4 @@ header {
   transform: translateY(calc(1.75*var(--s))) scale(.5) rotate(45deg);
   --b: 70%;
 }
+
