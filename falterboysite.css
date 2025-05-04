@@ -36,6 +36,7 @@ ul.nav a.nav-link {
   text-decoration: none;
   padding: 15px 20px;
   display: inline-block;
+  font-size: 42px;
 }
 
 ul.nav a.nav-link:hover {
