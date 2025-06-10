@@ -175,7 +175,7 @@ ul.nav a.nav-link:hover {
   text-align: center;
 }
 
-/* ===== Calendar Styles ===== */
+/* ===== Calendar Styles (Existing) ===== */
 header {
   background-color: #954b4c;
   color: #ffffff;
@@ -243,56 +243,88 @@ header {
   font-size: 12px;
 }
 
-/* ===== Gallery Styles ===== */
-.gallery {
-  --s: 130px;
-  display: grid;
-  grid-template-columns: repeat(3,auto);
-  gap: 5px;
-  position: relative;
+/* --- Calendar Specific Styles (New/Updated for functionality) --- */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Add some space below the header */
 }
 
-.gallery input {
-  position: absolute;
-  border: 2px solid #000;
-  border-radius: 50%;
-  inset: calc(50% - var(--s)/3);
+.calendar-header button {
+  background: none;
+  border: none;
+  font-size: 1.5rem; /* Larger arrows */
   cursor: pointer;
-  --g: linear-gradient(#000 0 0) no-repeat;
-  background: var(--g) 50%/var(--b,0%) 3px, var(--g) 50%/3px var(--b,0%);
-  transition: 1.5s;
-  appearance: none;
+  color: #333; /* Darker color for buttons */
+  padding: 5px 10px; /* Add some padding for easier clicking */
+  border-radius: 5px; /* Slightly rounded corners */
+  transition: color 0.2s ease-in-out; /* Smooth transition for hover */
 }
 
-.gallery > img {
-  width: var(--s);
-  aspect-ratio: 1;
-  object-fit: cover;
-  transform: scale(.1);
-  filter: brightness(0);
-  pointer-events: none;
-  transform-origin: var(--x) var(--y);
-  transition: 1s calc((var(--i) - 1)*.1s);
+.calendar-header button:hover {
+  color: #007bff; /* Bootstrap blue on hover */
 }
 
-.gallery > img:nth-of-type(1) {--i:1;--x: 150%;--y:150%;}
-.gallery > img:nth-of-type(2) {--i:2;--x:  50%;--y:150%;}
-.gallery > img:nth-of-type(3) {--i:3;--x: -50%;--y:150%;}
-.gallery > img:nth-of-type(4) {--i:4;--x: 150%;--y:50%; }
-.gallery > img:nth-of-type(5) {--i:5 }
-.gallery > img:nth-of-type(6) {--i:6;--x: -50%;--y:50%; }
-.gallery > img:nth-of-type(7) {--i:7;--x: 150%;--y:-50%;}
-.gallery > img:nth-of-type(8) {--i:8;--x:  50%;--y:-50%;}
-.gallery > img:nth-of-type(9) {--i:9;--x: -50%;--y:-50%;}
-
-.gallery > input:checked ~ img {
-  transform: scale(1);
-  filter: brightness(1);
-  pointer-events: initial;
+/* Style for the current month and year display */
+#currentMonthYear {
+  text-align: center;
+  flex-grow: 1; /* Allows it to take available space */
+  color: #333; /* Match button color or customize */
+  margin: 0; /* Remove default h2 margin */
+  font-size: 1.8rem; /* Adjust font size for prominence */
 }
 
-.gallery > input:checked {
-  transform: translateY(calc(1.75*var(--s))) scale(.5) rotate(45deg);
-  --b: 70%;
+/* Style for current month dates */
+.date.current-month {
+  background-color: #f9f9f9; /* Slightly different background for current month dates */
+  color: #333;
 }
 
+/* Style for today's date */
+.date.today {
+  background-color: #e0f7fa; /* A light blue for today */
+  font-weight: bold;
+  border: 2px solid #007bff; /* A small border to stand out more */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Subtle glow */
+}
+
+/* Adjustments for the event hover tooltip position (more stable) */
+.date.show-date {
+    position: relative; /* Essential for positioning the ::after pseudo-element */
+}
+
+.date.show-date:hover::after {
+    /* Keeping your existing styles, just ensuring it's positioned correctly */
+    content: attr(data-show);
+    display: block; /* Ensure it's treated as a block for sizing */
+    background: #333;
+    color: white;
+    padding: 5px 10px; /* More padding for readability */
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap; /* Prevent text wrapping */
+    z-index: 10; /* Ensure it appears above other elements */
+
+    /* Positioning adjustments */
+    position: absolute;
+    top: calc(100% + 5px); /* Position below the date cell, with a small gap */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    min-width: 150px; /* Ensure enough width for event text */
+    text-align: center; /* Center event text */
+}
+
+/* Remove or adjust existing .month h2 style if it conflicts with #currentMonthYear */
+/* The previous .month h2 styled the whole month div.
+   Now #currentMonthYear targets the h2 specifically inside the calendar header.
+   You might want to remove the old .month h2 style if it's no longer relevant.
+   For now, I'll assume you keep it but it might look redundant depending on your HTML.
+*/
+.month h2 { /* This is from your original CSS, might need to be adjusted or removed if not used */
+  /* background-color: #333; */
+  /* color: #954b4c; */
+  /* padding: 10px; */
+  /* margin: 0; */
+  /* border-radius: 5px; */
+}
