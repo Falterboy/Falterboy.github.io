@@ -1,21 +1,25 @@
+/* =======================================
+   FALTERBOY BRAND THEME
+   Burnt Orange • Charcoal • Off-White
+   ======================================= */
+
 /* ===== Base Styles ===== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   min-height: 100vh;
-  background-color: #954b4c;
+  background-color: #1a1a1a; /* Charcoal base */
   background-image: url("Falterboy-site/falterboy Hi Res.jpg");
-  background-size: 150px;
+  background-size: 180px;
   background-repeat: no-repeat;
   background-position: top center;
+  color: #f2f2f2;
   text-align: center;
-  display: grid;
-  place-content: center;
 }
 
-h2 {
-  text-align: center;
-  margin: 25px;
+/* Text tweaks */
+h2, h1, p {
+  color: #f2f2f2;
 }
 
 /* ===== Navigation Styles ===== */
@@ -23,47 +27,55 @@ ul.nav {
   display: flex;
   justify-content: center;
   list-style: none;
-  padding: 0;
+  padding: 15px 0;
   margin: 0;
-}
-
-ul.nav li.nav-item {
-  margin: 0 15px;
+  background-color: #c95f1a; /* Burnt orange bar */
+  border-bottom: 4px solid #000;
 }
 
 ul.nav a.nav-link {
-  color: black !important;
+  color: #1a1a1a !important; /* Dark text on orange bar */
   text-decoration: none;
-  padding: 15px 20px;
+  padding: 10px 20px;
   display: inline-block;
-  font-size: 42px;
+  font-size: 32px;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
 }
 
 ul.nav a.nav-link:hover {
   text-decoration: underline;
-  color: black !important;
+  color: #000 !important;
 }
 
-/* ===== Responsive Image ===== */
+/* ===== Main Image ===== */
 #vintage {
   display: block;
-  margin: 50px auto 0;
-  width: 50%;
+  margin: 40px auto 0;
+  width: 55%;
   height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-.responsive-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
+/* ===== Bio Section ===== */
+.belowpic {
+  padding: 40px 20px;
+  margin-top: 20px;
+  background: rgba(0,0,0,0.6);
+  border-top: 2px solid #c95f1a;
+  border-bottom: 2px solid #c95f1a;
 }
 
-/* ===== Container Styles ===== */
+.belowpic h2 {
+  line-height: 1.5;
+  font-size: 20px;
+}
+
+/* ===== Containers ===== */
 .container1, .container2 {
-  padding: 100px;
+  padding: 60px 20px;
   text-align: center;
-  display: block;
 }
 
 .container1 ul {
@@ -75,30 +87,18 @@ ul.nav a.nav-link:hover {
 }
 
 .container1 li {
-  display: block;
   padding: 10px 0;
-  font-size: 16px;
-  color: black;
-}
-
-.belowpic {
-  padding-top: 50px;
+  font-size: 18px;
+  color: #f2f2f2;
+  border-bottom: 1px solid #444;
 }
 
 /* ===== Band Facts ===== */
-.band-facts {
-  list-style-type: none;
-  padding: 0;
-  margin: 0 auto;
-  max-width: 600px;
-  text-align: left;
-}
-
 .band-facts li {
-  display: block;
-  padding: 8px 0;
-  font-size: 16px;
-  color: black;
+  padding: 10px 0;
+  font-size: 18px;
+  color: #f2f2f2;
+  border-bottom: 1px solid #444;
 }
 
 /* ===== Social Media Icons ===== */
@@ -111,7 +111,6 @@ ul.nav a.nav-link:hover {
   flex-wrap: wrap;
 }
 
-/* Icon and label styling */
 .icon-with-label {
   display: flex;
   flex-direction: column;
@@ -120,64 +119,34 @@ ul.nav a.nav-link:hover {
 
 .icon-with-label span {
   font-size: 16px;
-  color: white;
+  color: #f2f2f2;
   margin-top: 5px;
-  display: none; /* Hide on desktop by default */
 }
 
-/* Social icon base styles */
+/* Icons */
 .social-icons .fab {
-  font-size: 42px;
+  font-size: 40px;
   width: 70px;
   height: 70px;
   line-height: 70px;
   border-radius: 50%;
-  background-color: #333;
-  color: white;
+  background-color: #c95f1a;
+  color: #1a1a1a;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin: 10px;
-  padding: 0;
+  transition: 0.2s ease-in-out;
 }
 
 .social-icons .fab:hover {
-  opacity: 0.7;
+  background-color: #f2f2f2;
+  color: #1a1a1a;
 }
 
-/* Responsive: stack and show labels on mobile */
-@media (max-width: 600px) {
-  .social-icons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .icon-with-label span {
-    display: block;
-  }
-}
-
-/* Individual social colors */
-.fab.fa-facebook-f {
-  background: #3B5998;
-}
-
-.fab.fa-twitter {
-  background: #55ACEE;
-}
-
-.fab.fa-youtube {
-  background: #bb0000;
-}
-
-.center {
-  margin-top: 500px;
-  text-align: center;
-}
-/* ===== Calendar Styles (Existing) ===== */
+/* ===== Calendar Styles ===== */
 header {
-  background-color: #954b4c;
-  color: #ffffff;
+  background-color: #c95f1a;
+  color: #1a1a1a;
   padding: 20px;
   font-size: 24px;
 }
@@ -185,20 +154,22 @@ header {
 .calendar {
   max-width: 600px;
   margin: 20px auto;
-  background: white;
+  background: #f2f2f2;
+  color: #1a1a1a;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   border-radius: 10px;
 }
 
 .month h2 {
-  background-color: #333;
-  color: #954b4c;
+  background-color: #1a1a1a;
+  color: #c95f1a;
   padding: 10px;
   margin: 0;
   border-radius: 5px;
 }
 
+/* Grid */
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -209,124 +180,22 @@ header {
 .day {
   font-weight: bold;
   padding: 10px;
-  background: #bbb;
+  background: #ddd;
   border-radius: 5px;
 }
 
 .date {
   padding: 10px;
-  background: #ddd;
+  background: #eee;
   border-radius: 5px;
-  min-height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .show-date {
-  background: #ff5722;
+  background: #c95f1a;
   color: white;
-  font-weight: bold;
-  cursor: pointer;
 }
 
 .show-date:hover::after {
-  content: attr(data-show);
-  display: block;
-  background: #333;
-  color: white;
-  padding: 5px;
-  position: absolute;
-  transform: translateY(-30px);
-  border-radius: 5px;
-  font-size: 12px;
-}
-
-
-
-
-/* --- Calendar Specific Styles (New/Updated for functionality) --- */
-.calendar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px; /* Add some space below the header */
-}
-
-.calendar-header button {
-  background: none;
-  border: none;
-  font-size: 1.5rem; /* Larger arrows */
-  cursor: pointer;
-  color: #333; /* Darker color for buttons */
-  padding: 5px 10px; /* Add some padding for easier clicking */
-  border-radius: 5px; /* Slightly rounded corners */
-  transition: color 0.2s ease-in-out; /* Smooth transition for hover */
-}
-
-.calendar-header button:hover {
-  color: #007bff; /* Bootstrap blue on hover */
-}
-
-/* Style for the current month and year display */
-#currentMonthYear {
-  text-align: center;
-  flex-grow: 1; /* Allows it to take available space */
-  color: #333; /* Match button color or customize */
-  margin: 0; /* Remove default h2 margin */
-  font-size: 1.8rem; /* Adjust font size for prominence */
-}
-
-/* Style for current month dates */
-.date.current-month {
-  background-color: #f9f9f9; /* Slightly different background for current month dates */
-  color: #333;
-}
-
-/* Style for today's date */
-.date.today {
-  background-color: #e0f7fa; /* A light blue for today */
-  font-weight: bold;
-  border: 2px solid #007bff; /* A small border to stand out more */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Subtle glow */
-}
-
-/* Adjustments for the event hover tooltip position (more stable) */
-.date.show-date {
-    position: relative; /* Essential for positioning the ::after pseudo-element */
-}
-
-.date.show-date:hover::after {
-    /* Keeping your existing styles, just ensuring it's positioned correctly */
-    content: attr(data-show);
-    display: block; /* Ensure it's treated as a block for sizing */
-    background: #333;
-    color: white;
-    padding: 5px 10px; /* More padding for readability */
-    border-radius: 5px;
-    font-size: 12px;
-    white-space: nowrap; /* Prevent text wrapping */
-    z-index: 10; /* Ensure it appears above other elements */
-
-    /* Positioning adjustments */
-    position: absolute;
-    top: calc(100% + 5px); /* Position below the date cell, with a small gap */
-    left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
-    min-width: 150px; /* Ensure enough width for event text */
-    text-align: center; /* Center event text */
-}
-
-/* Remove or adjust existing .month h2 style if it conflicts with #currentMonthYear */
-/* The previous .month h2 styled the whole month div.
-   Now #currentMonthYear targets the h2 specifically inside the calendar header.
-   You might want to remove the old .month h2 style if it's no longer relevant.
-   For now, I'll assume you keep it but it might look redundant depending on your HTML.
-*/
-.month h2 { /* This is from your original CSS, might need to be adjusted or removed if not used */
-  /* background-color: #333; */
-  /* color: #954b4c; */
-  /* padding: 10px; */
-  /* margin: 0; */
-  /* border-radius: 5px; */
+  background: #1a1a1a;
+  color: #f2f2f2;
 }
