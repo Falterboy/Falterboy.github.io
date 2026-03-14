@@ -1,70 +1,96 @@
 /* =======================================
    FALTERBOY BRAND THEME
-   Burnt Orange • Charcoal • Off-White
+   Vintage Brick • Charcoal • Off-White
    ======================================= */
 
-/* ===== Base Styles ===== */
+/* ===== Color System ===== */
+:root {
+  --primary: #964c4b;
+  --primary-dark: #7a3d3c;
+  --accent: #c78a88;
+
+  --background: #141414;
+  --surface: #1f1f1f;
+
+  --text-main: #f2f2f2;
+  --text-muted: #b8b8b8;
+}
+
+
+/* ===== Base Page Styles ===== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   min-height: 100vh;
-  background-color: #1a1a1a; /* Charcoal base */
+
+  background-color: var(--background);
+  color: var(--text-main);
+
   background-image: url("Falterboy-site/falterboy Hi Res.jpg");
   background-size: 180px;
   background-repeat: no-repeat;
   background-position: top center;
-  color: #f2f2f2;
+
   text-align: center;
 }
 
-/* Text tweaks */
-h2, h1, p {
-  color: #f2f2f2;
+h1, h2, p {
+  color: var(--text-main);
 }
 
-/* ===== Navigation Styles ===== */
+
+/* ===== Navigation Bar ===== */
 ul.nav {
   display: flex;
   justify-content: center;
   list-style: none;
+
   padding: 15px 0;
   margin: 0;
-  background-color: #c95f1a; /* Burnt orange bar */
-  border-bottom: 4px solid #000;
+
+  background-color: var(--primary);
+  border-bottom: 4px solid black;
 }
 
 ul.nav a.nav-link {
-  color: #1a1a1a !important; /* Dark text on orange bar */
+  color: white !important;
   text-decoration: none;
-  padding: 10px 20px;
-  display: inline-block;
-  font-size: 32px;
+
+  padding: 10px 22px;
+
+  font-size: 28px;
   font-weight: bold;
+
   transition: 0.2s ease-in-out;
 }
 
 ul.nav a.nav-link:hover {
-  text-decoration: underline;
-  color: #000 !important;
+  color: var(--accent) !important;
 }
+
 
 /* ===== Main Image ===== */
 #vintage {
   display: block;
   margin: 40px auto 0;
+
   width: 55%;
   height: auto;
+
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
+
 /* ===== Bio Section ===== */
 .belowpic {
-  padding: 40px 20px;
+  padding: 40px 25px;
   margin-top: 20px;
-  background: rgba(0,0,0,0.6);
-  border-top: 2px solid #c95f1a;
-  border-bottom: 2px solid #c95f1a;
+
+  background: var(--surface);
+
+  border-top: 3px solid var(--primary);
+  border-bottom: 3px solid var(--primary);
 }
 
 .belowpic h2 {
@@ -72,8 +98,10 @@ ul.nav a.nav-link:hover {
   font-size: 20px;
 }
 
+
 /* ===== Containers ===== */
-.container1, .container2 {
+.container1,
+.container2 {
   padding: 60px 20px;
   text-align: center;
 }
@@ -82,29 +110,24 @@ ul.nav a.nav-link:hover {
   list-style-type: none;
   padding: 0;
   margin: 0 auto;
-  text-align: left;
+
   max-width: 600px;
+  text-align: left;
 }
 
 .container1 li {
   padding: 10px 0;
   font-size: 18px;
-  color: #f2f2f2;
+  color: var(--text-main);
+
   border-bottom: 1px solid #444;
 }
 
-/* ===== Band Facts ===== */
-.band-facts li {
-  padding: 10px 0;
-  font-size: 18px;
-  color: #f2f2f2;
-  border-bottom: 1px solid #444;
-}
 
 /* ===== Social Media Icons ===== */
 .social-icons {
   margin-top: 50px;
-  text-align: center;
+
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -119,83 +142,135 @@ ul.nav a.nav-link:hover {
 
 .icon-with-label span {
   font-size: 16px;
-  color: #f2f2f2;
   margin-top: 5px;
+  color: var(--text-main);
 }
 
-/* Icons */
 .social-icons .fab {
-  font-size: 40px;
-  width: 70px;
-  height: 70px;
-  line-height: 70px;
+  font-size: 36px;
+
+  width: 65px;
+  height: 65px;
+  line-height: 65px;
+
   border-radius: 50%;
-  background-color: #c95f1a;
-  color: #1a1a1a;
-  text-align: center;
+
+  background: var(--primary);
+  color: white;
+
   text-decoration: none;
   display: inline-block;
+
   transition: 0.2s ease-in-out;
 }
 
 .social-icons .fab:hover {
-  background-color: #f2f2f2;
-  color: #1a1a1a;
+  background: var(--accent);
 }
 
-/* ===== Calendar Styles ===== */
+
+/* ===== Calendar Section ===== */
 header {
-  background-color: #c95f1a;
-  color: #1a1a1a;
+  background-color: var(--primary);
+  color: white;
+
   padding: 20px;
   font-size: 24px;
 }
 
 .calendar {
-  max-width: 600px;
-  margin: 20px auto;
-  background: #f2f2f2;
-  color: #1a1a1a;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  border-radius: 10px;
+  max-width: 650px;
+  margin: 40px auto;
+
+  background: var(--surface);
+  color: var(--text-main);
+
+  padding: 25px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
-.month h2 {
-  background-color: #1a1a1a;
-  color: #c95f1a;
-  padding: 10px;
+
+/* ===== Calendar Header ===== */
+.calendar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.calendar-header h2 {
   margin: 0;
-  border-radius: 5px;
 }
 
-/* Grid */
+.calendar-header button {
+  background: var(--primary);
+  border: none;
+
+  padding: 8px 14px;
+
+  color: white;
+  font-size: 16px;
+
+  border-radius: 6px;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.calendar-header button:hover {
+  background: var(--primary-dark);
+}
+
+
+/* ===== Calendar Grid ===== */
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+
   gap: 5px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .day {
   font-weight: bold;
+
   padding: 10px;
-  background: #ddd;
+
+  background: #2a2a2a;
   border-radius: 5px;
 }
 
 .date {
-  padding: 10px;
-  background: #eee;
-  border-radius: 5px;
+  padding: 12px;
+
+  background: #222;
+  border-radius: 6px;
 }
 
+
+/* ===== Show Dates ===== */
 .show-date {
-  background: #c95f1a;
+  background: var(--primary);
   color: white;
+  font-weight: bold;
 }
 
+
+/* ===== Event Tooltip ===== */
 .show-date:hover::after {
-  background: #1a1a1a;
-  color: #f2f2f2;
+  content: attr(data-show);
+
+  position: absolute;
+  transform: translateY(-35px);
+
+  background: #000;
+  color: white;
+
+  padding: 6px 10px;
+  border-radius: 6px;
+
+  font-size: 12px;
 }
