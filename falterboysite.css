@@ -1,16 +1,14 @@
-/* =======================================
-   FALTERBOY BRAND THEME
-   Primary Color: #964c4b
-   Accent: Charcoal (#1a1a1a)
-   Text: Off-White (#f2f2f2)
-   ======================================= */
+/* ===== FALTERBOY BRAND THEME =====
+   Brand Color: #964c4b
+   Accent Colors: Charcoal (#1a1a1a), Off-White (#f2f2f2)
+*/
 
 /* ===== Base Styles ===== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   min-height: 100vh;
-  background-color: #1a1a1a; /* Charcoal base */
+  background-color: #1a1a1a;
   background-image: url("Falterboy-site/falterboy Hi Res.jpg");
   background-size: 180px;
   background-repeat: no-repeat;
@@ -19,7 +17,6 @@ body {
   text-align: center;
 }
 
-/* Text tweaks */
 h1, h2, p {
   color: #f2f2f2;
   margin: 0 0 15px 0;
@@ -32,7 +29,7 @@ ul.nav {
   list-style: none;
   padding: 15px 0;
   margin: 0;
-  background-color: #964c4b; /* Primary */
+  background-color: #964c4b;
   border-bottom: 4px solid #000;
 }
 
@@ -118,7 +115,6 @@ ul.nav a.nav-link:hover {
   margin-top: 5px;
 }
 
-/* Icons */
 .social-icons .fab {
   font-size: 40px;
   width: 70px;
@@ -156,25 +152,21 @@ header {
   border-radius: 10px;
 }
 
+/* Calendar Header (Month Name) */
 .calendar-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 15px;
   margin-bottom: 10px;
 }
 
-.calendar-header button {
-  background: #964c4b;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.calendar-header button:hover {
-  background: #7b3b3b;
+.calendar-header h2 {
+  color: #964c4b; /* Make month visible */
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 0 5px #964c4b, 0 0 10px #964c4b; /* subtle glow */
 }
 
 /* Grid */
@@ -182,7 +174,6 @@ header {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 5px;
-  margin-top: 10px;
 }
 
 .day {
@@ -196,51 +187,32 @@ header {
   padding: 10px;
   background: #eee;
   border-radius: 5px;
+  text-align: center;
   position: relative;
 }
 
 /* Highlight show dates */
 .show-date {
   background: #964c4b;
-  color: white;
+  color: #fff;
   font-weight: bold;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+  box-shadow: 0 0 5px #964c4b, 0 0 10px #964c4b;
 }
 
-/* Glow upcoming shows */
-.show-date:hover {
-  box-shadow: 0 0 12px #964c4b;
-}
-
-/* Tooltip on hover */
 .show-date:hover::after {
   content: attr(data-show);
-  position: absolute;
-  bottom: 110%;
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
   background: #1a1a1a;
   color: #f2f2f2;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-size: 12px;
+  padding: 5px;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
   white-space: nowrap;
-  box-shadow: 0 4px 10px rgba(0,0,0,.5);
-  z-index: 10;
-}
-
-/* Highlight today */
-.today {
-  border: 2px solid #964c4b;
-}
-
-/* ===== Show Details Box (Optional) ===== */
-.show-details {
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 20px;
-  background: #1f1f1f;
-  border: 2px solid #964c4b;
-  border-radius: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  box-shadow: 0 0 5px #964c4b;
 }
