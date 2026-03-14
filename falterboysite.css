@@ -1,96 +1,73 @@
 /* =======================================
    FALTERBOY BRAND THEME
-   Vintage Brick • Charcoal • Off-White
+   Primary Color: #964c4b
+   Accent: Charcoal (#1a1a1a)
+   Text: Off-White (#f2f2f2)
    ======================================= */
 
-/* ===== Color System ===== */
-:root {
-  --primary: #964c4b;
-  --primary-dark: #7a3d3c;
-  --accent: #c78a88;
-
-  --background: #141414;
-  --surface: #1f1f1f;
-
-  --text-main: #f2f2f2;
-  --text-muted: #b8b8b8;
-}
-
-
-/* ===== Base Page Styles ===== */
+/* ===== Base Styles ===== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   min-height: 100vh;
-
-  background-color: var(--background);
-  color: var(--text-main);
-
+  background-color: #1a1a1a; /* Charcoal base */
   background-image: url("Falterboy-site/falterboy Hi Res.jpg");
   background-size: 180px;
   background-repeat: no-repeat;
   background-position: top center;
-
+  color: #f2f2f2;
   text-align: center;
 }
 
+/* Text tweaks */
 h1, h2, p {
-  color: var(--text-main);
+  color: #f2f2f2;
+  margin: 0 0 15px 0;
 }
 
-
-/* ===== Navigation Bar ===== */
+/* ===== Navigation Styles ===== */
 ul.nav {
   display: flex;
   justify-content: center;
   list-style: none;
-
   padding: 15px 0;
   margin: 0;
-
-  background-color: var(--primary);
-  border-bottom: 4px solid black;
+  background-color: #964c4b; /* Primary */
+  border-bottom: 4px solid #000;
 }
 
 ul.nav a.nav-link {
-  color: white !important;
+  color: #1a1a1a !important;
   text-decoration: none;
-
-  padding: 10px 22px;
-
-  font-size: 28px;
+  padding: 10px 20px;
+  display: inline-block;
+  font-size: 32px;
   font-weight: bold;
-
   transition: 0.2s ease-in-out;
 }
 
 ul.nav a.nav-link:hover {
-  color: var(--accent) !important;
+  text-decoration: underline;
+  color: #000 !important;
 }
-
 
 /* ===== Main Image ===== */
 #vintage {
   display: block;
   margin: 40px auto 0;
-
   width: 55%;
   height: auto;
-
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-
 /* ===== Bio Section ===== */
 .belowpic {
-  padding: 40px 25px;
+  padding: 40px 20px;
   margin-top: 20px;
-
-  background: var(--surface);
-
-  border-top: 3px solid var(--primary);
-  border-bottom: 3px solid var(--primary);
+  background: rgba(0,0,0,0.6);
+  border-top: 2px solid #964c4b;
+  border-bottom: 2px solid #964c4b;
 }
 
 .belowpic h2 {
@@ -98,10 +75,8 @@ ul.nav a.nav-link:hover {
   font-size: 20px;
 }
 
-
 /* ===== Containers ===== */
-.container1,
-.container2 {
+.container1, .container2 {
   padding: 60px 20px;
   text-align: center;
 }
@@ -110,24 +85,21 @@ ul.nav a.nav-link:hover {
   list-style-type: none;
   padding: 0;
   margin: 0 auto;
-
-  max-width: 600px;
   text-align: left;
+  max-width: 600px;
 }
 
 .container1 li {
   padding: 10px 0;
   font-size: 18px;
-  color: var(--text-main);
-
+  color: #f2f2f2;
   border-bottom: 1px solid #444;
 }
-
 
 /* ===== Social Media Icons ===== */
 .social-icons {
   margin-top: 50px;
-
+  text-align: center;
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -142,135 +114,133 @@ ul.nav a.nav-link:hover {
 
 .icon-with-label span {
   font-size: 16px;
+  color: #f2f2f2;
   margin-top: 5px;
-  color: var(--text-main);
 }
 
+/* Icons */
 .social-icons .fab {
-  font-size: 36px;
-
-  width: 65px;
-  height: 65px;
-  line-height: 65px;
-
+  font-size: 40px;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
   border-radius: 50%;
-
-  background: var(--primary);
-  color: white;
-
+  background-color: #964c4b;
+  color: #1a1a1a;
+  text-align: center;
   text-decoration: none;
   display: inline-block;
-
   transition: 0.2s ease-in-out;
 }
 
 .social-icons .fab:hover {
-  background: var(--accent);
+  background-color: #f2f2f2;
+  color: #1a1a1a;
 }
 
-
-/* ===== Calendar Section ===== */
+/* ===== Calendar Styles ===== */
 header {
-  background-color: var(--primary);
-  color: white;
-
+  background-color: #964c4b;
+  color: #1a1a1a;
   padding: 20px;
   font-size: 24px;
 }
 
 .calendar {
-  max-width: 650px;
-  margin: 40px auto;
-
-  background: var(--surface);
-  color: var(--text-main);
-
-  padding: 25px;
-
-  border-radius: 12px;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  max-width: 600px;
+  margin: 20px auto;
+  background: #f2f2f2;
+  color: #1a1a1a;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  border-radius: 10px;
 }
 
-
-/* ===== Calendar Header ===== */
 .calendar-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 30px;
-}
-
-.calendar-header h2 {
-  margin: 0;
+  margin-bottom: 10px;
 }
 
 .calendar-header button {
-  background: var(--primary);
+  background: #964c4b;
+  color: #fff;
   border: none;
-
-  padding: 8px 14px;
-
-  color: white;
-  font-size: 16px;
-
-  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 18px;
   cursor: pointer;
-
-  transition: 0.2s;
+  border-radius: 5px;
 }
 
 .calendar-header button:hover {
-  background: var(--primary-dark);
+  background: #7b3b3b;
 }
 
-
-/* ===== Calendar Grid ===== */
+/* Grid */
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-
   gap: 5px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .day {
   font-weight: bold;
-
   padding: 10px;
-
-  background: #2a2a2a;
+  background: #ddd;
   border-radius: 5px;
 }
 
 .date {
-  padding: 12px;
-
-  background: #222;
-  border-radius: 6px;
+  padding: 10px;
+  background: #eee;
+  border-radius: 5px;
+  position: relative;
 }
 
-
-/* ===== Show Dates ===== */
+/* Highlight show dates */
 .show-date {
-  background: var(--primary);
+  background: #964c4b;
   color: white;
   font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 
+/* Glow upcoming shows */
+.show-date:hover {
+  box-shadow: 0 0 12px #964c4b;
+}
 
-/* ===== Event Tooltip ===== */
+/* Tooltip on hover */
 .show-date:hover::after {
   content: attr(data-show);
-
   position: absolute;
-  transform: translateY(-35px);
-
-  background: #000;
-  color: white;
-
-  padding: 6px 10px;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  color: #f2f2f2;
+  padding: 8px 12px;
   border-radius: 6px;
-
   font-size: 12px;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0,0,0,.5);
+  z-index: 10;
+}
+
+/* Highlight today */
+.today {
+  border: 2px solid #964c4b;
+}
+
+/* ===== Show Details Box (Optional) ===== */
+.show-details {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #1f1f1f;
+  border: 2px solid #964c4b;
+  border-radius: 10px;
 }
