@@ -1,101 +1,70 @@
-const calendarGrid = document.getElementById('calendarGrid');
-      const currentMonthYearHeader = document.getElementById('currentMonthYear');
-      const prevMonthBtn = document.getElementById('prevMonth');
-      const nextMonthBtn = document.getElementById('nextMonth');
+const calendarGrid = document.getElementById("calendarGrid");
+const currentMonthYear = document.getElementById("currentMonthYear");
 
-      // Set initial month to current month, but for demonstration of 2025 event, let's start with May 2025
-      let currentMonth = 4; // May (0-indexed)
-      let currentYear = 2025;
+const prevBtn = document.getElementById("prevMonth");
+const nextBtn = document.getElementById("nextMonth");
 
-      // Example event data (you'll want to manage this dynamically, perhaps from an API or a separate data file)
-      // Format: 'Month-Day-Year' (Month is 1-indexed for the key for easier human readability)
-      const events = {
-        '5-30-2025': 'Falterboy at Pinellas Ale Works, 6–9 PM',
-        // Add more events here, e.g.:
-        // '6-15-2025': 'Band Practice',
-        // '7-4-2025': 'Independence Day Gig!'
-      };
+/* START ON CURRENT DATE */
+let currentDate = new Date();
 
-      function renderCalendar(month, year) {
-        calendarGrid.innerHTML = `
-          <div class="day">Sun</div>
-          <div class="day">Mon</div>
-          <div class="day">Tue</div>
-          <div class="day">Wed</div>
-          <div class="day">Thu</div>
-          <div class="day">Fri</div>
-          <div class="day">Sat</div>
-        `; // Clear previous days and re-add day headers
+/* SHOWS DATA */
+const shows = {
+  "2025-04-12": "The Orpheum - Tampa",
+  "2025-04-18": "Crowbar - Ybor",
+  "2025-05-02": "The Nest - St Pete"
+};
 
-        const firstDayOfMonth = new Date(year, month, 1).getDay(); // 0 for Sunday, 1 for Monday, etc.
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
+function renderCalendar() {
 
-        currentMonthYearHeader.textContent = new Date(year, month).toLocaleString('en-US', { month: 'long', year: 'numeric' });
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth();
 
-        // Create empty divs for the days before the 1st of the month
-        for (let i = 0; i < firstDayOfMonth; i++) {
-          const dateDiv = document.createElement('div');
-          dateDiv.classList.add('date'); // No 'other-month' class as it's empty
-          calendarGrid.appendChild(dateDiv);
-        }
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-        // Fill in days of the current month
-        for (let day = 1; day <= daysInMonth; day++) {
-          const dateDiv = document.createElement('div');
-          dateDiv.classList.add('date', 'current-month');
-          dateDiv.textContent = day;
+  currentMonthYear.textContent =
+    currentDate.toLocaleString("default", { month: "long", year: "numeric" });
 
-          // Highlight today's date if it's in the currently displayed month
-          const today = new Date();
-          // Adjust for current time: Tuesday, June 10, 2025
-          if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
-             dateDiv.classList.add('today');
-          }
+  /* clear old dates */
+  calendarGrid.querySelectorAll(".date").forEach(el => el.remove());
 
+  /* blank cells before first day */
+  for (let i = 0; i < firstDay; i++) {
+    const blank = document.createElement("div");
+    calendarGrid.appendChild(blank);
+  }
 
-          // Add event data if available
-          const eventKey = `${month + 1}-${day}-${year}`; // Format: Month-Day-Year (1-indexed month for event key)
-          if (events[eventKey]) {
-            dateDiv.classList.add('show-date');
-            dateDiv.setAttribute('data-show', events[eventKey]);
-          }
+  /* actual dates */
+  for (let day = 1; day <= daysInMonth; day++) {
 
-          calendarGrid.appendChild(dateDiv);
-        }
+    const dateCell = document.createElement("div");
+    dateCell.classList.add("date");
+    dateCell.textContent = day;
 
-        // Fill in empty divs for the remaining cells to complete the last row
-        // This calculates how many cells are needed to make the grid a multiple of 7
-        const totalCellsFilled = firstDayOfMonth + daysInMonth;
-        const remainingCells = (7 - (totalCellsFilled % 7)) % 7; // (7 - (remainder of division by 7)) % 7
+    const dateKey =
+      year + "-" +
+      String(month + 1).padStart(2, "0") + "-" +
+      String(day).padStart(2, "0");
 
-        for (let i = 0; i < remainingCells; i++) {
-          const dateDiv = document.createElement('div');
-          dateDiv.classList.add('date'); // No 'other-month' class as it's empty
-          calendarGrid.appendChild(dateDiv);
-        }
-      }
+    if (shows[dateKey]) {
+      dateCell.classList.add("show-date");
+      dateCell.setAttribute("data-show", shows[dateKey]);
+    }
 
-      function showNextMonth() {
-        currentMonth++;
-        if (currentMonth > 11) {
-          currentMonth = 0;
-          currentYear++;
-        }
-        renderCalendar(currentMonth, currentYear);
-      }
+    calendarGrid.appendChild(dateCell);
+  }
+}
 
-      function showPrevMonth() {
-        currentMonth--;
-        if (currentMonth < 0) {
-          currentMonth = 11;
-          currentYear--;
-        }
-        renderCalendar(currentMonth, currentYear);
-      }
+/* BUTTONS */
 
-      // Event Listeners
-      prevMonthBtn.addEventListener('click', showPrevMonth);
-      nextMonthBtn.addEventListener('click', showNextMonth);
+prevBtn.addEventListener("click", () => {
+  currentDate.setMonth(currentDate.getMonth() - 1);
+  renderCalendar();
+});
 
-      // Initial render - Starting with May 2025 to show your event
-      renderCalendar(currentMonth, currentYear);
+nextBtn.addEventListener("click", () => {
+  currentDate.setMonth(currentDate.getMonth() + 1);
+  renderCalendar();
+});
+
+renderCalendar();
