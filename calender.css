@@ -72,3 +72,11 @@ header {
     border-radius: 5px;
     font-size: 12px;
 }
+.today {
+border:2px solid #964c4b;
+}
+.show-date{
+background:#964c4b;
+color:white;
+font-weight:bold;
+}
