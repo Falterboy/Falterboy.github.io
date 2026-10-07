@@ -52,7 +52,8 @@ ul.nav a.nav-link:hover {
 #vintage {
   display: block;
   margin: 40px auto 0;
-  width: 55%;
+  width: 35%;
+  max-width: 450px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
