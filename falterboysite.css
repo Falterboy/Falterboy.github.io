@@ -256,3 +256,52 @@ header {
   box-shadow: 0 0 15px #964c4b;
   transform: scale(1.05);
 }
+/* ===== Listen Now Section ===== */
+
+.listen-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-top: 2px solid #964c4b;
+  border-bottom: 2px solid #964c4b;
+}
+
+.listen-container h2 {
+  color: #f2f2f2;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.listen-container p {
+  color: #f2f2f2;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.listen-container iframe {
+  display: block;
+  margin: 0 auto 25px auto;
+}
+
+.listen-button {
+  display: inline-block;
+  background-color: #964c4b;
+  color: #f2f2f2 !important;
+  padding: 15px 30px;
+  border-radius: 8px;
+  border: 2px solid #964c4b;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none !important;
+  box-shadow: 0 0 8px #964c4b;
+  transition: all 0.2s ease-in-out;
+}
+
+.listen-button:hover {
+  background-color: #f2f2f2;
+  color: #964c4b !important;
+  box-shadow: 0 0 15px #964c4b;
+  transform: scale(1.05);
+}
