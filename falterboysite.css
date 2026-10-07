@@ -367,3 +367,18 @@ header {
     width: 90%;
   }
 }
+.gallery-heading {
+  text-align: center;
+  margin: 40px auto 10px;
+}
+
+.gallery-heading h1 {
+  color: #f2f2f2;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.gallery-heading p {
+  color: #f2f2f2;
+  font-size: 18px;
+}
