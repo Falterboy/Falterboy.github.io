@@ -308,8 +308,8 @@ header {
 }
 .responsive-img {
   display: block;
-  width: 45%;
-  max-width: 450px;
+  width: 50%;
+  max-width: 650px;
   height: auto;
   margin: 40px auto;
 }
